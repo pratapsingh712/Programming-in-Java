@@ -29,4 +29,4 @@ Examples:
 
 Input: arr[] = {12, 10, 9, 45, 2, 10, 10, 45} Output: 12, 10, 9, 45, 2
 
-Input: arr[] = {1, 2, 3, 4, 5} Output: 1, 2, 3, 4, 5
+Input: arr[] = {1, 2, 3, 4} Output: 1, 2, 3, 4
