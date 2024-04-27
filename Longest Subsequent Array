@@ -1,0 +1,53 @@
+package array;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class LongestSubsequentArray {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of your array :");
+		int size = sc.nextInt();
+		int array[] = new int[size];
+		System.out.println("Enter the elements in your array :");
+		for(int i=0;i<size;i++)
+		{
+			array[i] = sc.nextInt();
+		}
+		
+		// call the method that return the length of longest subsquesnt array :
+		
+
+		longestSubsequent(array);
+		
+		sc.close();
+		
+	}
+	
+	public static void longestSubsequent(int array[])
+	{
+		int length = 0;
+		Arrays.sort(array);
+		
+		// now i have my array as example 1,2,3,4,9,20
+		
+		// let's try to get the longest Subsequent
+		
+		for(int i=0; i<array.length; i++)
+		{
+			if(i>0 && array[i] == array[i-1]+1) // this logic is for subsequent array with a difference of 1 number each 
+				//(example: [1,2,3,4], [11,12,13,14], [51,52,53,54])
+			{
+				length++;
+			}
+			else
+			{
+				length = 1;
+			}
+		}
+		
+		System.out.println("length of longest subsequent group is : "+length);
+	}
+}
