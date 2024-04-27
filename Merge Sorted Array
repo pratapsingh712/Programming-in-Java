@@ -1,0 +1,71 @@
+package array;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class MergeSortedArray {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the size of two array :");
+		int size1 = sc.nextInt();
+		int size2 = sc.nextInt();
+		
+		int array1[] = new int[size1];
+		int array2[] = new int[size2];
+		
+		System.out.println("Enter the elements in array 1 in sorted order :");
+		for(int i=0;i<size1;i++)
+		{
+			array1[i] = sc.nextInt();
+		}
+		
+		System.out.println("Enter the elements in array 2 in sorted order :");
+		for(int i=0;i<size2;i++)
+		{
+			array2[i] = sc.nextInt();
+		}
+		
+		mergeSortedArray(array1,array2);
+		
+		sc.close();
+		
+	}
+	
+	public static void mergeSortedArray(int a1[], int a2[])
+	{
+		int n1 = a1.length;
+		int n2 = a2.length;
+		
+		int res[] = new int[n1+n2];
+		
+		int i=0,j=0,k=0;
+		
+		while(i<n1 && j<n2)
+		{
+			if(a1[i]<a2[j])
+			{
+				res[k++] = a1[i++];
+			}
+			else
+			{
+				res[k++] = a2[j++];
+			}
+		}
+		
+		while(i<n1) // if elements are left in a1 due to smaller a2 length
+		{
+			res[k++] = a1[i++];
+		}
+		
+		while(j<n2)
+		{
+			res[k++] = a2[j++];
+		}
+		
+		System.out.println("After merging these two sorted array i get : "+Arrays.toString(res));
+		
+		//1 3 5 7 9 , 2 4 6 8 10
+	}
+}
