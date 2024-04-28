@@ -1,4 +1,4 @@
-# Programming-in-Java
+# Programming-in-Java-Arrays
 programming challenges
 
 In this Repository I have four files where i have solved four programming challenges
